@@ -428,7 +428,7 @@ export default function HeroCarousel() {
       </div>
 
       {/* Auto-play Indicator */}
-      {isAutoPlaying && (
+      {/* {isAutoPlaying && (
         <motion.div
           className="absolute bottom-8 right-4 sm:right-8 z-20 px-4 py-2 rounded-full bg-emerald-500/90 backdrop-blur-md text-white font-['Lato'] text-xs font-semibold flex items-center gap-2"
           initial={{ opacity: 0, x: 20 }}
@@ -442,7 +442,7 @@ export default function HeroCarousel() {
           />
           Auto-playing
         </motion.div>
-      )}
+      )} */}
 
       {/* Booking Form Modal */}
       <AnimatePresence>
