@@ -153,8 +153,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition">
                 <Mail className="w-4 h-4 flex-shrink-0 text-[#34a870]" />
-                <a href="mailto:info@gupthaagency.com" className="hover:underline">
-                  info@gupthaagency.com
+                <a href="mailto:info@gupthatravels.com" className="hover:underline">
+                  info@gupthatravels.com
                 </a>
               </li>
               <li className="flex items-center gap-2 hover:text-[#34a870] transition-colors smooth-transition cursor-pointer">

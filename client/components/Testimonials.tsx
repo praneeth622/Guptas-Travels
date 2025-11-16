@@ -298,28 +298,27 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        {/* Main Title */}
+        {/* Main Title - SEO Optimized */}
         <motion.h2
           className="text-4xl sm:text-5xl lg:text-6xl font-bold font-['Playfair_Display'] mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <span className="text-gray-900">What Our </span>
+          <span className="text-gray-900">Customer Reviews - </span>
           <span className="bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-500 bg-clip-text text-transparent">
-            Happy Travelers
+            Best Travels in Tirupati
           </span>
-          <span className="text-gray-900"> Say</span>
         </motion.h2>
 
-        {/* Subtitle */}
+        {/* Subtitle - SEO Optimized */}
         <motion.p
           className="text-lg text-gray-600 font-['Lato'] max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Join thousands of satisfied customers who have experienced exceptional journeys with Guptha Travels
+          Join thousands of satisfied customers who have experienced exceptional Tirupati tour packages and car rental services with Guptha Travels - the top rated travel agency in Tirupati
         </motion.p>
 
         {/* Decorative line */}

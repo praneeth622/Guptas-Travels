@@ -184,13 +184,15 @@ function EnhancedDestinationCard({
       }}
       whileHover={{ y: -8 }}
     >
-      {/* Background Image with Parallax Zoom */}
+      {/* Background Image with Parallax Zoom - SEO Optimized */}
       <motion.img
         src={category.image}
-        alt={category.name}
+        alt={`${category.name} Tour Package Tirupati - ${category.description} - Guptha Travels Best Tours`}
+        title={`Book ${category.name} Tour - ${category.duration} - ${category.rating} Rating`}
         className="absolute inset-0 w-full h-full object-cover"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
+        loading="lazy"
       />
 
       {/* Dynamic Gradient Overlay */}
@@ -825,7 +827,30 @@ export default function Categories() {
     setSelectedDestination(null);
   };
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section
+      className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      aria-label="Tirupati Tour Packages - Popular Destinations"
+    >
+      {/* SEO-friendly hidden content for search engines */}
+      <div className="sr-only">
+        <h2>Tirupati Tour Packages - Popular Destinations Near Tirupati</h2>
+        <p>
+          Explore the best tourist destinations near Tirupati with Guptha Travels. Our affordable tour packages include
+          visits to Tirupati Balaji Temple, Sri Kalahasti Temple, Kanipakam Vinayaka Temple, Talakona Waterfalls,
+          Chandragiri Fort, and more. We offer customized pilgrimage tours, temple darshan packages, and sightseeing
+          tours with comfortable car rentals and professional guides. Book the best Tirupati tour packages for one day
+          trips, full day tours, and multi-day pilgrimage journeys.
+        </p>
+        <ul>
+          <li>Tirupati Balaji Temple Tours - Premium darshan packages with VIP arrangements</li>
+          <li>Sri Kalahasti Temple Tours - Rahu-Ketu pooja and ancient Shiva temple visits</li>
+          <li>Kanipakam Vinayaka Darshan - Miraculous self-growing Ganesha deity temple</li>
+          <li>Talakona Waterfalls Tours - Nature trekking and waterfall adventures</li>
+          <li>Chandragiri Fort Tours - Historical heritage site exploration</li>
+          <li>Tirupati One Day Tour Package - Affordable temple and sightseeing tours</li>
+        </ul>
+      </div>
+
       {/* Top Wave Divider */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg className="relative block w-full h-16 sm:h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -902,7 +927,7 @@ export default function Categories() {
           </div>
         </motion.div>
 
-        {/* Main Title */}
+        {/* Main Title - SEO Optimized */}
         <motion.h2
           className="text-4xl sm:text-5xl lg:text-6xl font-bold font-['Playfair_Display'] mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -910,13 +935,13 @@ export default function Categories() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <span className="text-gray-900">Explore Sacred </span>
+          <span className="text-gray-900">Tirupati Tour Packages - </span>
           <span className="bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent">
-            Destinations
+            Popular Destinations
           </span>
         </motion.h2>
 
-        {/* Subtitle */}
+        {/* Subtitle - SEO Optimized */}
         <motion.p
           className="text-lg text-gray-600 font-['Lato'] max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
@@ -924,8 +949,8 @@ export default function Categories() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Embark on spiritual journeys, witness breathtaking waterfalls, and explore historical wonders
-          in the sacred region of Tirupati
+          Affordable Tirupati tour packages for temple darshan, pilgrimage tours, and sightseeing.
+          Explore Tirupati Balaji, Sri Kalahasti, Kanipakam, waterfalls, and heritage sites with the best travels in Tirupati.
         </motion.p>
 
         {/* Decorative Line with Dots */}

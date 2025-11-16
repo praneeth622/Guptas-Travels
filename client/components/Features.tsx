@@ -113,23 +113,23 @@ export default function Features() {
 
           <h2 className="font-['Playfair_Display'] text-2xl sm:text-4xl lg:text-5xl font-bold leading-snug mb-3 sm:mb-5">
             <span className="text-[hsl(var(--sacred-saffron))]">
-              Your Trusted Spiritual
+              Best Travels in Tirupati -
             </span>
             <br />
             <span className="text-[hsl(var(--kumkum-red))]">
-              Journey Partner
+              Your Trusted Pilgrimage Partner
             </span>
           </h2>
 
           <p className="text-[hsl(var(--muted-foreground))] font-['Lato'] text-sm sm:text-base leading-relaxed mb-6 sm:mb-7 max-w-2xl">
-            With over{" "}
+            Guptha Travels is the top rated travel agency in Tirupati with over{" "}
             <span className="text-[hsl(var(--sacred-saffron))] font-bold">
               15 years of service
             </span>
-            , we provide comfortable transportation for pilgrims visiting
-            Tirupati and sacred temples. Our commitment to excellence and
-            customer satisfaction has made us the preferred choice for thousands
-            of devotees.
+            . We provide affordable Tirupati tour packages, car rentals, and comfortable transportation for pilgrims visiting
+            Tirupati Balaji Temple and sacred destinations. Our commitment to excellence and
+            customer satisfaction has made us the best travels in Tirupati, serving thousands
+            of devotees with professional drivers and 24/7 support.
           </p>
 
           {/* Achievement stats with enhanced design */}

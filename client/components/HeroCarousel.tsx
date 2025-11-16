@@ -5,49 +5,61 @@ import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG } from '@/lib/emailjs-config';
 
-// Hero images data
+// Hero images data with SEO-optimized content
 const heroImages = [
   {
     id: 1,
     image: "/swami_image.png",
-    title: "Lord Venkateswara Temple",
-    subtitle: "Experience Divine Blessings at Tirupati",
-    description: "Premium darshan packages with comfortable travel"
+    alt: "Lord Venkateswara Temple Tirupati - Best Tirupati Tour Packages by Guptha Travels",
+    title: "Tirupati Balaji Temple Tours",
+    subtitle: "Premium Tirumala Darshan Packages",
+    description: "Affordable Tirupati tour packages with comfortable car rentals and professional drivers. Best travels in Tirupati for devotee services.",
+    keywords: "Tirupati tour packages, Tirumala darshan, Tirupati Balaji temple"
   },
   {
     id: 6,
     image: "/Tiger.png",
-    title: "Zoo Park",
-    subtitle: "Wildlife Sanctuary & Adventure",
-    description: "Explore the rich biodiversity and wildlife"
+    alt: "Tirupati Zoo Park - Wildlife Tours by Guptha Travels",
+    title: "Tirupati Zoo Park Tours",
+    subtitle: "Wildlife Sanctuary & Adventure Packages",
+    description: "Explore Tirupati Zoo Park with our affordable tour packages. Best car rental services in Tirupati for family outings.",
+    keywords: "Tirupati zoo tours, wildlife sanctuary Tirupati, family tour packages"
   },
   {
     id: 2,
     image: "/gopuram.png",
-    title: "Sri Kalahasti Temple",
+    alt: "Sri Kalahasti Temple Tours - Car Rentals Tirupati by Guptha Travels",
+    title: "Sri Kalahasti Temple Packages",
     subtitle: "Rahu-Ketu Pooja & Sacred Rituals",
-    description: "Expert guided tours to ancient Shiva temple"
+    description: "Expert guided tours to Sri Kalahasti Temple near Tirupati. Affordable car rentals and pilgrimage packages available.",
+    keywords: "Sri Kalahasti temple tours, Rahu Ketu pooja, Tirupati temple tours"
   },
   {
     id: 3,
     image: "/kanipakam_vinayaka.jpg",
-    title: "Kanipakam Vinayaka",
-    subtitle: "Miraculous Self-Growing Deity",
-    description: "Spiritual journey to Ganesha's sacred abode"
+    alt: "Kanipakam Vinayaka Temple Tours - Best Travels in Tirupati",
+    title: "Kanipakam Vinayaka Darshan",
+    subtitle: "Miraculous Self-Growing Ganesha Deity",
+    description: "Spiritual journey to Kanipakam Vinayaka Temple with Guptha Travels. Top rated travel agency in Tirupati for temple tours.",
+    keywords: "Kanipakam temple tours, Vinayaka darshan, Tirupati pilgrimage"
   },
   {
     id: 4,
     image: "/Talakona_waterfall.jpg",
-    title: "Talakona Waterfalls",
-    subtitle: "Nature's Beauty & Adventure",
-    description: "Trekking and temple tours combined"
+    alt: "Talakona Waterfalls Tours - Tirupati Car Rentals by Guptha Travels",
+    title: "Talakona Waterfalls Adventure",
+    subtitle: "Nature's Beauty & Trekking Tours",
+    description: "Scenic Talakona Waterfalls tour packages from Tirupati. Best car rental services for nature and temple tours combined.",
+    keywords: "Talakona waterfalls tours, Tirupati nature tours, adventure packages"
   },
   {
     id: 5,
     image: "/chandragiri_fort.jpg",
-    title: "Chandragiri Fort",
-    subtitle: "Historical Heritage & Architecture",
-    description: "Explore ancient monuments and rich history"
+    alt: "Chandragiri Fort Tours - Top Travels in Tirupati",
+    title: "Chandragiri Fort Heritage Tours",
+    subtitle: "Historical Architecture & Culture",
+    description: "Explore ancient Chandragiri Fort with Guptha Travels. Affordable heritage tour packages in Tirupati with comfortable vehicles.",
+    keywords: "Chandragiri fort tours, Tirupati heritage tours, historical places"
   },
 ];
      
@@ -257,7 +269,27 @@ export default function HeroCarousel() {
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      aria-label="Tirupati Tour Packages and Car Rentals Hero Section"
     >
+      {/* SEO-friendly hidden content for search engines */}
+      <div className="sr-only">
+        <h1>Guptha Travels - Best Travels in Tirupati | Tirupati Tour Packages & Car Rentals</h1>
+        <p>
+          Guptha Travels is the top rated travel agency in Tirupati, Andhra Pradesh, offering affordable Tirupati tour packages,
+          Tirumala darshan packages, car rentals, and pilgrimage services. We provide sedan, SUV, and tempo traveller rentals
+          for temple visits with professional drivers. Book the best car rental in Tirupati for Tirupati to Tirumala cab services,
+          one day tour packages, and devotee services. Available 24/7 for all your travel needs in Tirupati and nearby destinations.
+        </p>
+        <ul>
+          <li>Tirupati Tour Packages - Affordable and customizable pilgrimage tours</li>
+          <li>Car Rentals Tirupati - Sedan, SUV, Tempo Traveller with professional drivers</li>
+          <li>Tirumala Darshan Packages - Premium temple visit arrangements</li>
+          <li>Tirupati to Tirumala Cab - Comfortable and reliable transportation</li>
+          <li>Best Travels in Tirupati - Top rated travel agency with 24/7 service</li>
+          <li>Devotee Services - Special packages for pilgrims and temple visitors</li>
+        </ul>
+      </div>
+
       {/* Image Carousel */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -268,9 +300,13 @@ export default function HeroCarousel() {
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right_25%] sm:bg-center"
-            style={{ backgroundImage: `url(${currentSlide.image})` }}
+          {/* SEO-optimized image with proper alt text */}
+          <img
+            src={currentSlide.image}
+            alt={currentSlide.alt}
+            className="absolute inset-0 w-full h-full object-cover object-[center_right_25%] sm:object-center"
+            loading="eager"
+            fetchPriority="high"
           />
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
@@ -304,29 +340,28 @@ export default function HeroCarousel() {
                 </div>
               </motion.div>
 
-              {/* Main Heading */}
+              {/* Main Heading - SEO Optimized */}
               <div className="space-y-3">
-                <motion.h1
+                <motion.h2
                   className="font-['Playfair_Display'] text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-2xl leading-tight"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   {currentSlide.title}
-                </motion.h1>
-                
-                <motion.p
+                </motion.h2>
+
+                <motion.h3
                   className="text-2xl sm:text-3xl md:text-4xl font-light text-emerald-300 font-['Playfair_Display'] drop-shadow-xl"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
                   {currentSlide.subtitle}
-                </motion.p>
+                </motion.h3>
 
                 <motion.p
-                  className="text-lg sm:text-xl text-white/90 font-['Lato'] max-w-2xl drop-shadow-lg sm:leading-relaxed md:visibility-hidden sm:visibility-hidden"
-                  style={{ visibility: 'hidden' }}
+                  className="text-lg sm:text-xl text-white/90 font-['Lato'] max-w-2xl drop-shadow-lg leading-relaxed"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.6 }}

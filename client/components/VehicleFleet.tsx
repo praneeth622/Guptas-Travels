@@ -142,26 +142,34 @@ export default function VehicleFleet() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-20 bg-gradient-to-b from-[hsl(var(--background))] via-white to-[hsl(var(--background))]">
-      {/* Animated Highway Marquee */}
-      
+    <section
+      className="w-full px-4 sm:px-8 lg:px-24 py-16 sm:py-20 bg-gradient-to-b from-[hsl(var(--background))] via-white to-[hsl(var(--background))]"
+      aria-label="Car Rental Fleet - Tirupati Vehicle Rentals"
+    >
+      {/* SEO-friendly hidden content */}
+      <div className="sr-only">
+        <h2>Car Rentals Tirupati - Best Vehicle Fleet by Guptha Travels</h2>
+        <p>
+          Guptha Travels offers the best car rental services in Tirupati with a premium fleet of sedans, SUVs,
+          and tempo travellers. Our affordable car rentals include Etios, Swift Dzire, Ertiga, Toyota Innova Crysta,
+          and tempo travellers for 12-17 passengers. Perfect for Tirupati to Tirumala cab services, temple tours,
+          outstation trips, and group travel. All vehicles come with professional drivers, 24/7 support, and 5-star
+          safety ratings. Book the best car rental in Tirupati for your pilgrimage and travel needs.
+        </p>
+      </div>
 
       {/* Premium Section Header */}
       <div className="text-center mb-16 sm:mb-20">
-        
         <h2 className="text-[hsl(var(--foreground))] font-['Playfair_Display'] text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-          Our Vehicles
+          Car Rentals Tirupati - Premium Vehicle Fleet
         </h2>
-        {/* <p className="text-[hsl(var(--muted-foreground))] text-lg sm:text-xl max-w-4xl mx-auto px-4 font-['Lato'] leading-relaxed">
-          Experience extraordinary comfort with our meticulously-maintained fleet of business-class and enterprise-grade vehicles. 
-          <span className="text-emerald-700 font-semibold"> Precision. Luxury. Trust.</span>
-        </p> */}
+        <p className="text-[hsl(var(--muted-foreground))] text-lg sm:text-xl max-w-4xl mx-auto px-4 font-['Lato'] leading-relaxed">
+          Best car rental services in Tirupati with sedans, SUVs, and tempo travellers for temple tours and outstation trips.
+          <span className="text-emerald-700 font-semibold"> Affordable rates. Professional drivers. 24/7 service.</span>
+        </p>
 
         {/* Premium Badges Row */}
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-8">
-          {/* <div className="px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 backdrop-blur-sm">
-            <p className="text-sm font-['Lato'] font-semibold text-emerald-700">✓ ISO Certified Fleet</p>
-          </div> */}
           <div className="px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 backdrop-blur-sm">
             <p className="text-sm font-['Lato'] font-semibold text-blue-700">
               ✓ 5-Star Safety Rating
@@ -170,6 +178,11 @@ export default function VehicleFleet() {
           <div className="px-4 py-2 rounded-lg bg-purple-50 border border-purple-200 backdrop-blur-sm">
             <p className="text-sm font-['Lato'] font-semibold text-purple-700">
               ✓ 24/7 Support
+            </p>
+          </div>
+          <div className="px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 backdrop-blur-sm">
+            <p className="text-sm font-['Lato'] font-semibold text-emerald-700">
+              ✓ Professional Drivers
             </p>
           </div>
         </div>
@@ -196,8 +209,10 @@ export default function VehicleFleet() {
               <div className="absolute inset-0 flex items-center justify-center bg-white p-4 sm:p-0">
                 <img
                   src={vehicle.image}
-                  alt={`Premium ${vehicle.name}`}
+                  alt={`${vehicle.name} Car Rental Tirupati - ${vehicle.subtitle} - Guptha Travels Best Car Rental Service`}
+                  title={`Book ${vehicle.name} in Tirupati - ${vehicle.capacity} - Starting from ${vehicle.localRent}`}
                   className="w-full h-full object-contain sm:object-cover"
+                  loading="lazy"
                 />
                 {/* Gradient Overlay - Always visible */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -205,20 +220,13 @@ export default function VehicleFleet() {
 
               {/* Vehicle Details - Always visible at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 text-white">
-                {/* Vehicle Badge */}
-                {/* <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 backdrop-blur-md border border-emerald-400/50 mb-3">
-                  <span className="text-emerald-300 font-['Lato'] text-sm font-semibold">
-                    {vehicle.badge}
-                  </span>
-                </div> */}
-                
-                {/* Vehicle Name */}
+                {/* Vehicle Name - SEO Optimized */}
                 <h3 className="text-white font-['Playfair_Display'] text-3xl sm:text-5xl font-bold mb-2">
-                  {vehicle.name}
+                  {vehicle.name} - Car Rental Tirupati
                 </h3>
-                <p className="text-emerald-300 text-lg sm:text-xl font-['Lato'] font-semibold mb-6">
-                  {vehicle.subtitle}
-                </p>
+                <h4 className="text-emerald-300 text-lg sm:text-xl font-['Lato'] font-semibold mb-6">
+                  {vehicle.subtitle} | {vehicle.capacity}
+                </h4>
 
                 {/* Pricing Cards */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4">
@@ -459,7 +467,7 @@ export default function VehicleFleet() {
                 <span>WhatsApp Us</span>
               </a>
               <a
-                href="mailto:info@gupthaagency.com"
+                href="mailto:info@gupthatravels.com"
                 className="px-10 py-4 rounded-xl bg-blue-50 border-2 border-blue-200 text-blue-700 font-['Lato'] font-bold text-lg hover:bg-blue-100 transition-all flex items-center gap-2 whitespace-nowrap"
               >
                 <Mail className="w-5 h-5" />

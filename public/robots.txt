@@ -1,7 +1,29 @@
+# Robots.txt for Guptha Travels - Best Travels in Tirupati
+# Tirupati Tour Packages | Car Rentals | Tirumala Darshan Packages
+# https://www.gupthatravels.com/
+
+User-agent: *
+Allow: /
+Allow: /Logo.png
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 1
+
+# Specific search engine bots
 User-agent: Googlebot
 Allow: /
 
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
 Allow: /
 
 User-agent: Twitterbot
@@ -10,7 +32,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
-
-Sitemap: https://www.guptaagency.com/sitemap.xml
+# Sitemap location
+Sitemap: https://www.gupthatravels.com/sitemap.xml
