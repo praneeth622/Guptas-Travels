@@ -150,7 +150,7 @@ export default function HeroCarousel() {
       description: (
         <div className="mt-2 space-y-2">
           <p className="font-semibold text-emerald-600">
-            +91 9704466557
+            +91 9959968116
           </p>
           <p className="text-sm">
             We're available 24/7 to assist you
@@ -232,7 +232,7 @@ export default function HeroCarousel() {
       console.error('Email send error:', error);
       toast({
         title: "❌ Sending Failed",
-        description: "Please try again or call us directly at +91 9704466557",
+        description: "Please try again or call us directly at +91 9959968116",
         variant: "destructive",
         duration: 5000,
       });
@@ -342,7 +342,29 @@ export default function HeroCarousel() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <motion.button
+                {/* WhatsApp Button - Opens WhatsApp with pre-filled message */}
+                <motion.a
+                  href="https://wa.me/919959968116?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20journey%20with%20GUPTHA%20TRAVELS.%20Can%20you%20provide%20more%20details%3F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-['Lato'] font-bold text-lg shadow-2xl relative overflow-hidden group"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <span className="relative flex items-center justify-center gap-3">
+                    Book Your Journey
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                  </span>
+                </motion.a>
+
+                {/* Original Booking Form Button - Commented out */}
+                {/* <motion.button
                   onClick={() => setShowBookingForm(true)}
                   className="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-['Lato'] font-bold text-lg shadow-2xl relative overflow-hidden group"
                   whileHover={{ scale: 1.05 }}
@@ -358,7 +380,7 @@ export default function HeroCarousel() {
                     Book Your Journey
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </span>
-                </motion.button>
+                </motion.button> */}
                 
                 <motion.button
                   onClick={handlePhoneClick}
@@ -366,9 +388,9 @@ export default function HeroCarousel() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <a href="tel:+919704466557" className="flex items-center justify-center gap-3">
+                  <a href="tel:+919959968116" className="flex items-center justify-center gap-3">
                     <Phone className="w-5 h-5" />
-                    <span>+91 9704466557</span>
+                    <span>+91 9959968116</span>
                   </a>
                 </motion.button>
               </motion.div>
@@ -444,7 +466,8 @@ export default function HeroCarousel() {
         </motion.div>
       )} */}
 
-      {/* Booking Form Modal */}
+      {/* Booking Form Modal - Commented out, using WhatsApp instead */}
+      {false && (
       <AnimatePresence>
         {showBookingForm && (
           <motion.div
@@ -638,6 +661,7 @@ export default function HeroCarousel() {
           </motion.div>
         )}
       </AnimatePresence>
+      )}
     </section>
   );
 }

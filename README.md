@@ -1,6 +1,6 @@
 # GUPTHA TRAVELS
 
-A full-stack Vite + React + Express project for GUPTA TRAVELS - a premium travel and transportation website. This project contains a client (React + TypeScript + Tailwind) and server/API code intended to be built and deployed as a server-rendered or static site.
+A full-stack Vite + React + Express project for GUPTHA TRAVELS - a premium travel and transportation website. This project contains a client (React + TypeScript + Tailwind) and server/API code intended to be built and deployed as a server-rendered or static site.
 
 ## Overview
 

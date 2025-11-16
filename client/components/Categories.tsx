@@ -807,8 +807,13 @@ export default function Categories() {
   };
 
   const handleContactClick = () => {
+    // Open WhatsApp instead of contact form
+    const message = selectedDestination
+      ? `Hi, I'm interested in booking a tour to ${selectedDestination.name}. Can you provide more details?`
+      : `Hi, I'm interested in booking a tour. Can you provide more details?`;
+    const whatsappUrl = `https://wa.me/919959968116?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
     setShowDetailsModal(false);
-    setTimeout(() => setShowContactModal(true), 300);
   };
 
   const handleCloseContact = () => {
@@ -1041,11 +1046,12 @@ export default function Categories() {
         onContactClick={handleContactClick}
       />
 
-      <ContactFormModal
+      {/* Contact Form Modal - Commented out, using WhatsApp instead */}
+      {/* <ContactFormModal
         category={selectedDestination}
         isOpen={showContactModal}
         onClose={handleCloseContact}
-      />
+      /> */}
     </section>
   );
 }

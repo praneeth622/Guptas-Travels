@@ -157,7 +157,7 @@ export default function BikeRentals() {
             <span>Book Your Bike Now</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </button>
-          <a href="https://wa.me/919704466557" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 backdrop-blur-sm bg-white/50">
+          <a href="https://wa.me/919959968116" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 backdrop-blur-sm bg-white/50">
             <MessageCircle className="w-5 h-5" />
             <span>WhatsApp Inquiry</span>
           </a>
@@ -372,12 +372,12 @@ export default function BikeRentals() {
               Book your perfect ride today and experience the freedom of two-wheelers
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="tel:+919704466557" className="px-10 py-5 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] text-white font-['Lato'] font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group w-full sm:w-auto justify-center">
+              <a href="tel:+919959968116" className="px-10 py-5 rounded-full bg-gradient-to-r from-[hsl(var(--sacred-saffron))] to-[hsl(var(--kumkum-red))] text-white font-['Lato'] font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group w-full sm:w-auto justify-center">
                 <Phone className="w-6 h-6" />
-                <span>Call: +91 9704466557</span>
+                <span>Call: +91 9959968116</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </a>
-              <a href="https://wa.me/919704466557" target="_blank" rel="noopener noreferrer" className="px-10 py-5 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 bg-white shadow-lg">
+              <a href="https://wa.me/919959968116" target="_blank" rel="noopener noreferrer" className="px-10 py-5 rounded-full border-3 border-[hsl(var(--sacred-saffron))] text-[hsl(var(--sacred-saffron))] font-['Lato'] font-bold text-lg hover:bg-[hsl(var(--sacred-saffron))] hover:text-white transition-all duration-300 flex items-center gap-3 bg-white shadow-lg">
                 <MessageCircle className="w-6 h-6" />
                 <span>WhatsApp Booking</span>
               </a>

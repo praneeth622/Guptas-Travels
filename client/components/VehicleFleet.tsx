@@ -88,6 +88,11 @@ export default function VehicleFleet() {
   const [currentVehicle, setCurrentVehicle] = useState<number>(0);
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
 
   // Auto-carousel effect
   useEffect(() => {
@@ -102,6 +107,38 @@ export default function VehicleFleet() {
 
   const toggleExpand = (index: number) => {
     setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  // Touch handlers for swipe functionality
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(0); // Reset touch end
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      // Swipe left - go to next
+      setIsAutoPlaying(false);
+      setCurrentVehicle(currentVehicle === vehicles.length - 1 ? 0 : currentVehicle + 1);
+      setTimeout(() => setIsAutoPlaying(true), 5000);
+    }
+
+    if (isRightSwipe) {
+      // Swipe right - go to previous
+      setIsAutoPlaying(false);
+      setCurrentVehicle(currentVehicle === 0 ? vehicles.length - 1 : currentVehicle - 1);
+      setTimeout(() => setIsAutoPlaying(true), 5000);
+    }
   };
 
   return (
@@ -138,9 +175,14 @@ export default function VehicleFleet() {
         </div>
       </div>
 
-      {/* Single Vehicle Carousel - Clean & Simple */}
+      {/* Single Vehicle Carousel - Clean & Simple with Touch Support */}
       <div className="max-w-6xl mx-auto mb-16 sm:mb-20">
-        <div className="relative h-[500px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group bg-white">
+        <div
+          className="relative h-[500px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl group bg-white touch-pan-y select-none"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           {vehicles.map((vehicle, index) => (
             <div
               key={index}
@@ -216,14 +258,14 @@ export default function VehicleFleet() {
             </div>
           ))}
 
-          {/* Navigation Buttons - Clean design */}
+          {/* Navigation Buttons - Hidden on mobile, visible on desktop */}
           <button
             onClick={() => {
               setIsAutoPlaying(false);
               setCurrentVehicle(currentVehicle === 0 ? vehicles.length - 1 : currentVehicle - 1);
               setTimeout(() => setIsAutoPlaying(true), 5000);
             }}
-            className="absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
+            className="hidden md:flex absolute top-1/2 left-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
             aria-label="Previous vehicle"
           >
             ‹
@@ -234,7 +276,7 @@ export default function VehicleFleet() {
               setCurrentVehicle(currentVehicle === vehicles.length - 1 ? 0 : currentVehicle + 1);
               setTimeout(() => setIsAutoPlaying(true), 5000);
             }}
-            className="absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 flex items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
+            className="hidden md:flex absolute top-1/2 right-4 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/30 items-center justify-center text-white text-2xl opacity-0 group-hover:opacity-100 hover:bg-black/60 transition-all z-30"
             aria-label="Next vehicle"
           >
             ›
@@ -401,14 +443,14 @@ export default function VehicleFleet() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center flex-wrap">
               <a
-                href="tel:+919704466557"
+                href="tel:+919959968116"
                 className="px-10 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-['Lato'] font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all flex items-center gap-2 whitespace-nowrap"
               >
                 <Phone className="w-5 h-5" />
-                <span>Call: +91 9704466557</span>
+                <span>Call: +91 9959968116</span>
               </a>
               <a
-                href="https://wa.me/919704466557"
+                href="https://wa.me/919959968116"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-4 rounded-xl border-2 border-emerald-600 text-emerald-700 font-['Lato'] font-bold text-lg hover:bg-emerald-600 hover:text-white transition-all flex items-center gap-2 whitespace-nowrap"

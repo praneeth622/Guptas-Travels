@@ -195,7 +195,7 @@ export default function PopularDestinations() {
       console.error('Email send error:', error);
       toast({
         title: "❌ Sending Failed",
-        description: "Please try again or call us directly at +91 9704466557",
+        description: "Please try again or call us directly at +91 9959968116",
         variant: "destructive",
         duration: 5000,
       });
